@@ -33,7 +33,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // Route::get('logout',[AdminController::])
 
 // User Managent routes
-Route::middleware(['auth:sanctum', 'verified'])->prefix('users')->group(function (){
+Route::prefix('users')->group(function (){
 
     Route::get('/',[UserController::class,'index'])->name('user.view');
     Route::get('/create',[UserController::class,'create'])->name('user.create');
@@ -45,10 +45,11 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('users')->group(function
 
 
 // Profile Managent routes
-Route::middleware(['auth:sanctum', 'verified'])->prefix('profile')->group(function (){
+Route::prefix('profile')->group(function (){
 
     Route::get('/',[ProfileController::class,'index'])->name('profile.view');
     Route::get('/edit',[ProfileController::class,'edit'])->name('profile.edit');
     Route::post('/update',[ProfileController::class,'update'])->name('profile.update');
-    Route::post('/reset',[ProfileController::class,'reset'])->name('profile.reset');
+    Route::get('/password/edit',[ProfileController::class,'passedit'])->name('profile.reset');
+    Route::post('/password/update',[ProfileController::class,'passupdate'])->name('profile.passupdate');
 });
