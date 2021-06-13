@@ -168,7 +168,13 @@
 
             <li class="nav-item dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <img src="{{asset('admin')}}/assets/img/profile-16.jpg" alt="avatar">
+                    @php
+                        $user=Auth::user();
+                        $imm_path=$user->profile_photo_path;
+                        $img_url= url('storage/profile-photos/'.$imm_path);
+                        $av_url="https://ui-avatars.com/api/?name={$user->name}&color=7F9CF5&background=EBF4FF"
+                    @endphp
+                    <img src="{{(!empty($imm_path)) ? $img_url : $av_url}}" alt="avatar">
                 </a>
                 <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                     <div class="">
