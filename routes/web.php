@@ -5,6 +5,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Classes\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,4 +53,15 @@ Route::prefix('profile')->group(function (){
     Route::post('/update',[ProfileController::class,'update'])->name('profile.update');
     Route::get('/password/edit',[ProfileController::class,'passedit'])->name('profile.reset');
     Route::post('/password/update',[ProfileController::class,'passupdate'])->name('profile.passupdate');
+});
+
+// Class Managent routes
+Route::prefix('student')->group(function (){
+
+    Route::get('/class',[StudentController::class,'class_index'])->name('student.class');
+    Route::get('/class/create',[StudentController::class,'class_create'])->name('student.class.create');
+     Route::post('/class/store',[StudentController::class,'class_store'])->name('student.class.store');
+  Route::get('/class/delete/{id}',[StudentController::class,'class_delete'])->name('student.class.delete');
+   Route::get('/class/edit/{id}',[StudentController::class,'class_edit'])->name('student.class.edit');
+    Route::post('/class/update/{id}',[StudentController::class,'class_update'])->name('student.class.update');
 });

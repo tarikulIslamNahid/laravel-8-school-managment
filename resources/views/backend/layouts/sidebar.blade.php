@@ -1,7 +1,9 @@
 @php
     $prefixed =Request::route()->getPrefix();
-@endphp
+    $route = Route::current()->getName();
 
+@endphp
+{{-- @dd($route) --}}
 <div class="sidebar-wrapper sidebar-theme">
 
     <nav id="sidebar">
@@ -62,16 +64,25 @@
             </li>
 
 
-
             <li class="menu">
-                <a href="fonticons.html" aria-expanded="false" class="dropdown-toggle">
+                <a href="#class" data-toggle="collapse" data-active="{{($route=='student.class' || $route=='student.class.create') ? 'true' :''}}" aria-expanded="{{($route=='student.class'|| $route=='student.class.create') ? 'true' :''}}" class="dropdown-toggle">
                     <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-                        <span>Font Icons</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <span>Manage Student Class</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
                 </a>
+                <ul class="collapse submenu list-unstyled" id="class" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{route('student.class')}}"> Class List </a>
+                    </li>
+                    <li>
+                        <a href="{{route('student.class.create')}}"> Create Class </a>
+                    </li>
+                </ul>
             </li>
-
         </ul>
         <!-- <div class="shadow-bottom"></div> -->
 
