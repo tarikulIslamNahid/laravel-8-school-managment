@@ -68,7 +68,7 @@
                 <a href="#class" data-toggle="collapse" data-active="{{($route=='student.class' || $route=='student.class.create' || $route=='student.class.edit') ? 'true' :''}}" aria-expanded="{{($route=='student.class'|| $route=='student.class.create'|| $route=='student.class.edit') ? 'true' :''}}" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        <span>Manage Student Class</span>
+                        <span>Student Class</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -89,7 +89,7 @@
                 <a href="#year" data-toggle="collapse" data-active="{{($route=='student.year' || $route=='student.year.create'|| $route=='student.year.edit') ? 'true' :''}}" aria-expanded="{{($route=='student.year'|| $route=='student.year.create'|| $route=='student.year.edit') ? 'true' :''}}" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        <span>Manage Student Year</span>
+                        <span>Student Year</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -101,6 +101,27 @@
                     </li>
                     <li>
                         <a href="{{route('student.year.create')}}"> Create Year </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="menu">
+                <a href="#group" data-toggle="collapse" data-active="{{($route=='student.group' || $route=='student.group.create'|| $route=='student.group.edit') ? 'true' :''}}" aria-expanded="{{($route=='student.group'|| $route=='student.group.create'|| $route=='student.group.edit') ? 'true' :''}}" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <span>Student Group</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="group" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{route('student.group')}}"> Group List </a>
+                    </li>
+                    <li>
+                        <a href="{{route('student.group.create')}}"> Create Group </a>
                     </li>
                 </ul>
             </li>
