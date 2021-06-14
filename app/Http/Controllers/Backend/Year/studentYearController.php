@@ -31,11 +31,11 @@ return view('backend.year.create');
     }
     public function year_delete($id){
         StudentYear::find($id)->delete();
-        $dnotification=array(
+        $notification=array(
             'message'=> 'Student Year Delete Sucessfully',
             'alert-type'=> 'error',
         );
-        return redirect()->route('student.year')->with($dnotification);
+        return redirect()->route('student.year')->with($notification);
     }
 
     public function year_edit($id){
