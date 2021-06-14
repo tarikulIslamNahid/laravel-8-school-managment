@@ -65,7 +65,7 @@
 
 
             <li class="menu">
-                <a href="#class" data-toggle="collapse" data-active="{{($route=='student.class' || $route=='student.class.create') ? 'true' :''}}" aria-expanded="{{($route=='student.class'|| $route=='student.class.create') ? 'true' :''}}" class="dropdown-toggle">
+                <a href="#class" data-toggle="collapse" data-active="{{($route=='student.class' || $route=='student.class.create' || $route=='student.class.edit') ? 'true' :''}}" aria-expanded="{{($route=='student.class'|| $route=='student.class.create'|| $route=='student.class.edit') ? 'true' :''}}" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                         <span>Manage Student Class</span>
@@ -83,6 +83,28 @@
                     </li>
                 </ul>
             </li>
+
+
+            <li class="menu">
+                <a href="#year" data-toggle="collapse" data-active="{{($route=='student.year' || $route=='student.year.create'|| $route=='student.year.edit') ? 'true' :''}}" aria-expanded="{{($route=='student.year'|| $route=='student.year.create'|| $route=='student.year.edit') ? 'true' :''}}" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <span>Manage Student Year</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="year" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{route('student.year')}}"> Year List </a>
+                    </li>
+                    <li>
+                        <a href="{{route('student.year.create')}}"> Create Year </a>
+                    </li>
+                </ul>
+            </li>
+
         </ul>
         <!-- <div class="shadow-bottom"></div> -->
 
