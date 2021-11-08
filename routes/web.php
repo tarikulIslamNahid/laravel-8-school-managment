@@ -5,6 +5,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\ExamTypeController;
 use App\Http\Controllers\Backend\Classes\StudentController;
 use App\Http\Controllers\Backend\Year\studentYearController;
 use App\Http\Controllers\Backend\group\StudentGroupController;
@@ -113,4 +114,13 @@ Route::prefix('student')->group(function () {
     Route::get('/fee/amount/edit/{fee_cat_id}', [studentFeeAmountController::class, 'fee_amount_edit'])->name('student.fee.amount.edit');
     Route::get('/fee/amount/view/{id}', [studentFeeAmountController::class, 'fee_amount_view'])->name('student.fee.amount.view');
     Route::post('/fee/amount/update/{fee_cat_id}', [studentFeeAmountController::class, 'fee_amount_update'])->name('student.fee.amount.update');
+
+
+    // Exam Type--
+    Route::get('/exam-type', [ExamTypeController::class, 'index'])->name('student.examtype.index');
+    // Route::get('/class/create', [StudentController::class, 'class_create'])->name('student.class.create');
+    // Route::post('/class/store', [StudentController::class, 'class_store'])->name('student.class.store');
+    // Route::get('/class/delete/{id}', [StudentController::class, 'class_delete'])->name('student.class.delete');
+    // Route::get('/class/edit/{id}', [StudentController::class, 'class_edit'])->name('student.class.edit');
+    // Route::post('/class/update/{id}', [StudentController::class, 'class_update'])->name('student.class.update');
 });
