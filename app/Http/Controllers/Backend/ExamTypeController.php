@@ -90,8 +90,13 @@ class ExamTypeController extends Controller
      * @param  \App\Models\ExamType  $examType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ExamType $examType)
+    public function destroy($id)
     {
-        //
+        ExamType::findOrFail($id)->delete();
+        $dnotification = array(
+            'message' => 'Exam Type Delete Sucessfully',
+            'alert-type' => 'error',
+        );
+        return redirect()->back()->with($dnotification);
     }
 }
