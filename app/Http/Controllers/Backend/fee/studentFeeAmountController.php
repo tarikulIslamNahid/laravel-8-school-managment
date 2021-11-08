@@ -86,4 +86,14 @@ class studentFeeAmountController extends Controller
 
         return redirect()->route('student.fee.amount')->with($notification);
     }
+
+    public function fee_amount_delete($id)
+    {
+        studentFeeAmount::where('fee_cat_id', $id)->delete();
+        $notification = array(
+            'message' => 'Delete Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('student.fee.amount')->with($notification);
+    }
 }
