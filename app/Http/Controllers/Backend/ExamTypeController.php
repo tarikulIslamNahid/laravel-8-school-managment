@@ -26,7 +26,7 @@ class ExamTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.examtype.create');
     }
 
     /**
@@ -37,7 +37,17 @@ class ExamTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'name' => 'required|unique:exam_types',
+        ]);
+        $classes = new ExamType;
+        $classes->name = $request->name;
+        $classes->save();
+        $notification = array(
+            'message' => 'Exam Type Created Sucessfully',
+            'alert-type' => 'success',
+        );
+        return redirect()->route('student.examtype.index')->with($notification);
     }
 
     /**

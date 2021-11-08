@@ -118,8 +118,8 @@ Route::prefix('student')->group(function () {
 
     // Exam Type--
     Route::get('/exam-type', [ExamTypeController::class, 'index'])->name('student.examtype.index');
-    // Route::get('/class/create', [StudentController::class, 'class_create'])->name('student.class.create');
-    // Route::post('/class/store', [StudentController::class, 'class_store'])->name('student.class.store');
+    Route::get('/exam-type/create', [ExamTypeController::class, 'create'])->name('student.examtype.create');
+    Route::post('/exam-type/store', [ExamTypeController::class, 'store'])->name('student.examtype.store');
     // Route::get('/class/delete/{id}', [StudentController::class, 'class_delete'])->name('student.class.delete');
     // Route::get('/class/edit/{id}', [StudentController::class, 'class_edit'])->name('student.class.edit');
     // Route::post('/class/update/{id}', [StudentController::class, 'class_update'])->name('student.class.update');

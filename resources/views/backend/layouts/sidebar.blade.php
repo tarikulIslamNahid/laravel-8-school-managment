@@ -289,8 +289,8 @@ $route = Route::current()->getName();
 
 <li class="menu">
     <a href="#class" data-toggle="collapse"
-        data-active="{{ $route == 'student.examtype.index' || $route == 'student.class.create' || $route == 'student.class.edit' ? 'true' : '' }}"
-        aria-expanded="{{ $route == 'student.examtype.index' || $route == 'student.class.create' || $route == 'student.class.edit' ? 'true' : '' }}"
+        data-active="{{ $route == 'student.examtype.index' || $route == 'student.examtype.create' || $route == 'student.class.edit' ? 'true' : '' }}"
+        aria-expanded="{{ $route == 'student.examtype.index' || $route == 'student.examtype.create' || $route == 'student.class.edit' ? 'true' : '' }}"
         class="dropdown-toggle">
         <div class="">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -314,7 +314,7 @@ $route = Route::current()->getName();
             <a href="{{ route('student.examtype.index') }}"> Exam List </a>
         </li>
         <li>
-            <a href="{{ route('student.class.create') }}"> Create Class </a>
+            <a href="{{ route('student.examtype.create') }}"> Create Exam Type </a>
         </li>
     </ul>
 </li>
