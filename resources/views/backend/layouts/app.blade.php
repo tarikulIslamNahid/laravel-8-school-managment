@@ -25,8 +25,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('admin')}}/plugins/table/datatable/datatables.css">
 <link rel="stylesheet" type="text/css" href="{{asset('admin')}}/plugins/table/datatable/dt-global_style.css">
 {{-- data table --}}
-{{-- <link href="{{asset('admin')}}/plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" /> --}}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @yield('style')
 </head>
 <body>
@@ -68,13 +67,8 @@
     <script src="{{asset('admin')}}/plugins/apex/apexcharts.min.js"></script>
     <script src="{{asset('admin')}}/assets/js/dashboard/dash_1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    {{-- <script src="{{asset('admin')}}/plugins/notification/snackbar/snackbar.min.js"></script>
-    <!-- END PAGE LEVEL PLUGINS -->
 
-    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
-    <script src="{{asset('admin')}}/assets/js/components/notification/custom-snackbar.js"></script> --}}
-    <script>
+  <script>
         toastr.options.timeOut = 800;
            toastr.options.progressBar = true;
         @if(Session::has('message'))
@@ -87,13 +81,6 @@
            case 'success':
            toastr.success(" {{ Session::get('message') }} ");
 
-    // Snackbar.show({
-    //     text:" {{ Session::get('message') }} ",
-    //     actionTextColor: '#fff',
-    //     backgroundColor: '#1abc9c'
-    //     duration: 3000,
-
-    // });
            break;
 
            case 'warning':

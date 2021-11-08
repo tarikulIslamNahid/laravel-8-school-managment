@@ -109,7 +109,7 @@ Route::prefix('student')->group(function (){
     Route::get('/fee/amount',[studentFeeAmountController::class,'fee_amount_index'])->name('student.fee.amount');
     Route::get('/fee/amount/create',[studentFeeAmountController::class,'fee_amount_create'])->name('student.fee.amount.create');
     Route::post('/fee/amount/store',[studentFeeAmountController::class,'fee_amount_store'])->name('student.fee.amount.store');
-    Route::get('/fee/amount/delete/{id}',[studentFeeAmountController::class,'fee_amount_delete'])->name('student.fee.amount.delete');
-    Route::get('/fee/amount/edit/{id}',[studentFeeAmountController::class,'fee_amount_edit'])->name('student.fee.amount.edit');
-    Route::post('/fee/amount/update/{id}',[studentFeeAmountController::class,'fee_amount_update'])->name('student.fee.amount.update');
+    Route::get('/fee/amount/delete/{fee_cat_id}',[studentFeeAmountController::class,'fee_amount_delete'])->name('student.fee.amount.delete');
+    Route::get('/fee/amount/edit/{fee_cat_id}',[studentFeeAmountController::class,'fee_amount_edit'])->name('student.fee.amount.edit');
+    Route::post('/fee/amount/update/{fee_cat_id}',[studentFeeAmountController::class,'fee_amount_update'])->name('student.fee.amount.update');
 });
