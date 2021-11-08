@@ -53,6 +53,12 @@ class studentFeeAmountController extends Controller
 
         return view('backend.fee.feecatamount.edit', $data);
     }
+    public function fee_amount_view($id)
+    {
+        $data['stu_fee_cat_amount_details'] = studentFeeAmount::where('fee_cat_id', $id)->orderBy('class_id', 'asc')->get();
+
+        return view('backend.fee.feecatamount.view', $data);
+    }
 
 
     public function fee_amount_update(Request $request, $fee_cat_id)

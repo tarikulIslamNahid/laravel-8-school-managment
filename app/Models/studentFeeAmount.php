@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class studentFeeAmount extends Model
 {
     use HasFactory;
-    public function fee_cat(){
-        return $this->belongsTo(studentFeeCategory::class,'fee_cat_id','id');
+    public function fee_cat()
+    {
+        return $this->belongsTo(studentFeeCategory::class, 'fee_cat_id', 'id');
+    }
+
+    public function student_class()
+    {
+        return $this->belongsTo(studentClass::class, 'class_id', 'id');
     }
 }

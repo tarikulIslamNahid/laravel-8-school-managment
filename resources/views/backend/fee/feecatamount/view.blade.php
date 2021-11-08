@@ -4,7 +4,11 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><span>Student Fee Category Amount</span></li>
+    <li class="breadcrumb-item"><a href="{{ route('student.fee.amount') }}">Fee Amount</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><span>view</span></li>
+    <li class="breadcrumb-item active" aria-current="page">
+        <span>{{ $stu_fee_cat_amount_details[0]['fee_cat']['name'] }}</span>
+    </li>
 @endsection
 @section('style')
     <style>
@@ -25,11 +29,11 @@
             <div class="row mt-5">
                 <div class="col-lg-12 ">
                     <div class=" d-flex justify-content-between p-3 statbox tabelbox box box-shadow">
-                        <h4>Student Fee Amount List</h4>
+                        <h4>Student Fee Amount Details</h4>
 
                         <div class="dt-buttons"> <a href="{{ route('student.fee.amount.create') }}"
                                 class="dt-button btn btn-primary btn-sm toggle-vis mb-1" tabindex="0"
-                                aria-controls="show-hide-col"><span>Create New</span></a>
+                                aria-controls="show-hide-col"><span>Add New</span></a>
                         </div>
                     </div>
 
@@ -46,54 +50,18 @@
                             <thead>
                                 <tr>
                                     <th width="20%">SL</th>
-                                    <th width="60%">Fee Category</th>
-                                    <th width="20%" class="no-content">Actions</th>
+                                    <th width="60%">Class Name</th>
+                                    <th width="20%" class="no-content">Fee</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($stu_fee_cat_amount as $key => $amount)
+                                @foreach ($stu_fee_cat_amount_details as $key => $detail)
 
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $amount['fee_cat']['name'] }}</td>
-                                        <td>
-                                            <a href="{{ route('student.fee.amount.edit', $amount->fee_cat_id) }}"
-                                                class='mr-2'>
+                                        <td>{{ $detail['student_class']['name'] }}</td>
+                                        <td> {{ $detail->amount }}</td>
 
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-check-square  table-cancel">
-                                                    <polyline points="9 11 12 14 22 4"></polyline>
-                                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11">
-                                                    </path>
-                                                </svg>
-                                            </a>
-
-                                            <a href="{{ route('student.fee.amount.delete', $amount->fee_cat_id) }}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-trash-2 table-cancel">
-                                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                                    <path
-                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                    </path>
-                                                    <line x1="10" y1="11" x2="10" y2="17"></line>
-                                                    <line x1="14" y1="11" x2="14" y2="17"></line>
-                                                </svg>
-                                            </a>
-
-                                            <a href="{{ route('student.fee.amount.view', $amount->fee_cat_id) }}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-eye">
-                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                    <circle cx="12" cy="12" r="3"></circle>
-                                                </svg>
-                                            </a>
-                                        </td>
                                     </tr>
                                 @endforeach
 
