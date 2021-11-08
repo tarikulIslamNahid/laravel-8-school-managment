@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', 'Student Shift')
+@section('title', 'Exam Type')
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
@@ -28,7 +28,7 @@
                     <div class=" d-flex justify-content-between p-3 statbox tabelbox box box-shadow">
                         <h4>Exam Type List</h4>
 
-                        <div class="dt-buttons"> <a href="{{ route('student.fee.amount.create') }}"
+                        <div class="dt-buttons"> <a href="{{ route('student.examtype.create') }}"
                                 class="dt-button btn btn-primary btn-sm toggle-vis mb-1" tabindex="0"
                                 aria-controls="show-hide-col"><span>Add New</span></a>
                         </div>
