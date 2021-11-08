@@ -58,7 +58,7 @@
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $detail->name }}</td>
                                         <td>
-                                            <a href="{{ route('student.fee.amount.edit', $detail->id) }}" class='mr-2'>
+                                            <a href="{{ route('student.examtype.edit', $detail->id) }}" class='mr-2'>
 
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

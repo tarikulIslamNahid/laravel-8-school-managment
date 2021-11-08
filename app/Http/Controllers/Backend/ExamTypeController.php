@@ -50,16 +50,6 @@ class ExamTypeController extends Controller
         return redirect()->route('student.examtype.index')->with($notification);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ExamType  $examType
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ExamType $examType)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -67,9 +57,10 @@ class ExamTypeController extends Controller
      * @param  \App\Models\ExamType  $examType
      * @return \Illuminate\Http\Response
      */
-    public function edit(ExamType $examType)
+    public function edit($id)
     {
-        //
+        $ExamTypes = ExamType::find($id);
+        return view('backend.examtype.edit', compact('ExamTypes'));
     }
 
     /**
@@ -79,9 +70,20 @@ class ExamTypeController extends Controller
      * @param  \App\Models\ExamType  $examType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ExamType $examType)
+    public function update(Request $request, $id)
     {
-        //
+        $ExamType = ExamType::find($id);
+
+        $validateData = $request->validate([
+            'name' => 'required|unique:exam_types,name,' . $ExamType->id,
+        ]);
+        $ExamType->name = $request->name;
+        $ExamType->save();
+        $notification = array(
+            'message' => 'Exam Type Updated Sucessfully',
+            'alert-type' => 'success',
+        );
+        return redirect()->route('student.examtype.index')->with($notification);
     }
 
     /**
