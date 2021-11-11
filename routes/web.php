@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\ExamTypeController;
+use App\Http\Controllers\Backend\SchoolSubjectController;
 use App\Http\Controllers\Backend\Classes\StudentController;
 use App\Http\Controllers\Backend\Year\studentYearController;
 use App\Http\Controllers\Backend\group\StudentGroupController;
@@ -123,4 +124,13 @@ Route::prefix('student')->group(function () {
     Route::get('/exam-type/delete/{id}', [ExamTypeController::class, 'destroy'])->name('student.examtype.destroy');
     Route::get('/exam-type/edit/{id}', [ExamTypeController::class, 'edit'])->name('student.examtype.edit');
     Route::post('/exam-type/update/{id}', [ExamTypeController::class, 'update'])->name('student.examtype.update');
+
+
+    // School Subjects--
+    Route::get('/subject', [SchoolSubjectController::class, 'index'])->name('student.subject.index');
+    // Route::get('/exam-type/create', [ExamTypeController::class, 'create'])->name('student.examtype.create');
+    // Route::post('/exam-type/store', [ExamTypeController::class, 'store'])->name('student.examtype.store');
+    // Route::get('/exam-type/delete/{id}', [ExamTypeController::class, 'destroy'])->name('student.examtype.destroy');
+    // Route::get('/exam-type/edit/{id}', [ExamTypeController::class, 'edit'])->name('student.examtype.edit');
+    // Route::post('/exam-type/update/{id}', [ExamTypeController::class, 'update'])->name('student.examtype.update');
 });

@@ -287,10 +287,11 @@ $route = Route::current()->getName();
     </ul>
 </li>
 
+
 <li class="menu">
-    <a href="#class" data-toggle="collapse"
-        data-active="{{ $route == 'student.examtype.index' || $route == 'student.examtype.create' || $route == 'student.class.edit' ? 'true' : '' }}"
-        aria-expanded="{{ $route == 'student.examtype.index' || $route == 'student.examtype.create' || $route == 'student.class.edit' ? 'true' : '' }}"
+    <a href="#examtype" data-toggle="collapse"
+        data-active="{{ $route == 'student.examtype.index' || $route == 'student.examtype.create' || $route == 'student.examtype.edit' ? 'true' : '' }}"
+        aria-expanded="{{ $route == 'student.examtype.index' || $route == 'student.examtype.create' || $route == 'student.examtype.edit' ? 'true' : '' }}"
         class="dropdown-toggle">
         <div class="">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -309,12 +310,44 @@ $route = Route::current()->getName();
             </svg>
         </div>
     </a>
-    <ul class="collapse submenu list-unstyled" id="class" data-parent="#accordionExample">
+    <ul class="collapse submenu list-unstyled" id="examtype" data-parent="#accordionExample">
         <li>
             <a href="{{ route('student.examtype.index') }}"> Exam List </a>
         </li>
         <li>
-            <a href="{{ route('student.examtype.create') }}"> Create Exam Type </a>
+            <a href="{{ route('student.examtype.create') }}"> Create Exam type </a>
+        </li>
+    </ul>
+</li>
+
+<li class="menu">
+    <a href="#subject" data-toggle="collapse"
+        data-active="{{ $route == 'student.subject.index' || $route == 'student.examtype.create' || $route == 'student.examtype.edit' ? 'true' : '' }}"
+        aria-expanded="{{ $route == 'student.subject.index' || $route == 'student.examtype.create' || $route == 'student.examtype.edit' ? 'true' : '' }}"
+        class="dropdown-toggle">
+        <div class="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-user">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Student Subject</span>
+        </div>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </div>
+    </a>
+    <ul class="collapse submenu list-unstyled" id="subject" data-parent="#accordionExample">
+        <li>
+            <a href="{{ route('student.subject.index') }}"> Subject List </a>
+        </li>
+        <li>
+            <a href="{{ route('student.examtype.create') }}"> Create Subject </a>
         </li>
     </ul>
 </li>
