@@ -28,7 +28,7 @@
                     <div class=" d-flex justify-content-between p-3 statbox tabelbox box box-shadow">
                         <h4>Subject List</h4>
 
-                        <div class="dt-buttons"> <a href="{{ route('student.examtype.create') }}"
+                        <div class="dt-buttons"> <a href="{{ route('student.subject.create') }}"
                                 class="dt-button btn btn-primary btn-sm toggle-vis mb-1" tabindex="0"
                                 aria-controls="show-hide-col"><span>Add New</span></a>
                         </div>

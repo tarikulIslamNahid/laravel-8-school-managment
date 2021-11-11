@@ -27,7 +27,7 @@ class SchoolSubjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.subject.create');
     }
 
     /**
@@ -38,7 +38,17 @@ class SchoolSubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'name' => 'required|unique:school_subjects',
+        ]);
+        $subject = new schoolSubject;
+        $subject->name = $request->name;
+        $subject->save();
+        $notification = array(
+            'message' => 'Subject Created Sucessfully',
+            'alert-type' => 'success',
+        );
+        return redirect()->route('student.subject.index')->with($notification);
     }
 
     /**
