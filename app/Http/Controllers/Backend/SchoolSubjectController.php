@@ -91,8 +91,13 @@ class SchoolSubjectController extends Controller
      * @param  \App\Models\schoolSubject  $schoolSubject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(schoolSubject $schoolSubject)
+    public function destroy($id)
     {
-        //
+        schoolSubject::findOrFail($id)->delete();
+        $dnotification = array(
+            'message' => 'Subject Delete Sucessfully',
+            'alert-type' => 'error',
+        );
+        return redirect()->back()->with($dnotification);
     }
 }

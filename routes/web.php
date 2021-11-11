@@ -130,7 +130,7 @@ Route::prefix('student')->group(function () {
     Route::get('/subject', [SchoolSubjectController::class, 'index'])->name('student.subject.index');
     Route::get('/subject/create', [SchoolSubjectController::class, 'create'])->name('student.subject.create');
     Route::post('/subject/store', [SchoolSubjectController::class, 'store'])->name('student.subject.store');
-    // Route::get('/exam-type/delete/{id}', [ExamTypeController::class, 'destroy'])->name('student.examtype.destroy');
+    Route::get('/subject/delete/{id}', [SchoolSubjectController::class, 'destroy'])->name('student.subject.destroy');
     // Route::get('/exam-type/edit/{id}', [ExamTypeController::class, 'edit'])->name('student.examtype.edit');
     // Route::post('/exam-type/update/{id}', [ExamTypeController::class, 'update'])->name('student.examtype.update');
 });
