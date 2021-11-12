@@ -68,9 +68,10 @@ class SchoolSubjectController extends Controller
      * @param  \App\Models\schoolSubject  $schoolSubject
      * @return \Illuminate\Http\Response
      */
-    public function edit(schoolSubject $schoolSubject)
+    public function edit($id)
     {
-        //
+        $schoolSub = schoolSubject::find($id);
+        return view('backend.subject.edit', compact('schoolSub'));
     }
 
     /**
@@ -80,9 +81,20 @@ class SchoolSubjectController extends Controller
      * @param  \App\Models\schoolSubject  $schoolSubject
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, schoolSubject $schoolSubject)
+    public function update(Request $request, $id)
     {
-        //
+        $schoolSubject = schoolSubject::find($id);
+
+        $validateData = $request->validate([
+            'name' => 'required|unique:school_subjects,name,' . $schoolSubject->id,
+        ]);
+        $schoolSubject->name = $request->name;
+        $schoolSubject->save();
+        $notification = array(
+            'message' => 'Subject Updated Sucessfully',
+            'alert-type' => 'success',
+        );
+        return redirect()->route('student.subject.index')->with($notification);
     }
 
     /**
