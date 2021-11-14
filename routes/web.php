@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\ExamTypeController;
 use App\Http\Controllers\Backend\SchoolSubjectController;
+use App\Http\Controllers\Backend\AssignSubjectController;
 use App\Http\Controllers\Backend\Classes\StudentController;
 use App\Http\Controllers\Backend\Year\studentYearController;
 use App\Http\Controllers\Backend\group\StudentGroupController;
@@ -117,6 +118,7 @@ Route::prefix('student')->group(function () {
     Route::post('/fee/amount/update/{fee_cat_id}', [studentFeeAmountController::class, 'fee_amount_update'])->name('student.fee.amount.update');
 
 
+
     // Exam Type--
     Route::get('/exam-type', [ExamTypeController::class, 'index'])->name('student.examtype.index');
     Route::get('/exam-type/create', [ExamTypeController::class, 'create'])->name('student.examtype.create');
@@ -133,4 +135,13 @@ Route::prefix('student')->group(function () {
     Route::get('/subject/delete/{id}', [SchoolSubjectController::class, 'destroy'])->name('student.subject.destroy');
     Route::get('/subject/edit/{id}', [SchoolSubjectController::class, 'edit'])->name('student.subject.edit');
     Route::post('/subject/update/{id}', [SchoolSubjectController::class, 'update'])->name('student.subject.update');
+
+    // Subject Assign--
+    Route::get('/subject/assign', [AssignSubjectController::class, 'index'])->name('student.subjectassign.index');
+    // Route::get('/fee/amount/create', [studentFeeAmountController::class, 'fee_amount_create'])->name('student.fee.amount.create');
+    // Route::post('/fee/amount/store', [studentFeeAmountController::class, 'fee_amount_store'])->name('student.fee.amount.store');
+    // Route::get('/fee/amount/delete/{fee_cat_id}', [studentFeeAmountController::class, 'fee_amount_delete'])->name('student.fee.amount.delete');
+    // Route::get('/fee/amount/edit/{fee_cat_id}', [studentFeeAmountController::class, 'fee_amount_edit'])->name('student.fee.amount.edit');
+    // Route::get('/fee/amount/view/{id}', [studentFeeAmountController::class, 'fee_amount_view'])->name('student.fee.amount.view');
+    // Route::post('/fee/amount/update/{fee_cat_id}', [studentFeeAmountController::class, 'fee_amount_update'])->name('student.fee.amount.update');
 });

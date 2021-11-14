@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Models\assignSubject;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class AssignSubjectController extends Controller
      */
     public function index()
     {
-        //
+        $data['assignSubjects'] = assignSubject::select('class_id')->groupBy('class_id')->get();
+        return view('backend.subjectassign.index', $data);
     }
 
     /**

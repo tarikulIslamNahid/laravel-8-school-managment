@@ -351,6 +351,37 @@ $route = Route::current()->getName();
         </li>
     </ul>
 </li>
+<li class="menu">
+    <a href="#assign" data-toggle="collapse"
+        data-active="{{ $route == 'student.subjectassign.index' || $route == 'student.examtype.create' || $route == 'student.examtype.edit' ? 'true' : '' }}"
+        aria-expanded="{{ $route == 'student.subjectassign.index' || $route == 'student.examtype.create' || $route == 'student.examtype.edit' ? 'true' : '' }}"
+        class="dropdown-toggle">
+        <div class="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-user">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Assign Subject</span>
+        </div>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </div>
+    </a>
+    <ul class="collapse submenu list-unstyled" id="assign" data-parent="#accordionExample">
+        <li>
+            <a href="{{ route('student.subjectassign.index') }}"> Assign List </a>
+        </li>
+        <li>
+            <a href="{{ route('student.subject.create') }}"> Create Subject Assign </a>
+        </li>
+    </ul>
+</li>
 
 </ul>
 <!-- <div class="shadow-bottom"></div> -->
